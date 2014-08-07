@@ -6,13 +6,18 @@ def louchebemize(sentence)
 end
 
 def arrange_beginning(word)
-  unless word.start_with?("a","e","i","o","u")
+  while word.start_with?("a","e","i","o","u")==false
     word=word+word[0] #word.split("").last
     word=word[1..-1]
-    arrange_beginning(word)
   end
-  word = "l"+word
+  word = "l"+word+select_suffix
   return word
 end
 
-louchebemize("saluté")
+def select_suffix
+  suffix_array = ["em", "é", "ji", "oc", "ic", "uche", "ès"]
+
+  suffix_array[rand(0..6).round]
+end
+
+louchebemize("csaluté")
