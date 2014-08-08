@@ -6,16 +6,18 @@ def most_common_words(file_name, stop_words_file_name, number_of_word)
     words_array = line.split
     temp_array = []
     words_array.each do |word|
-      count = 0
+      flag = 0
       File.open(stop_words_file_name,"r").each_line do |stop_word|
-        if stop_word==word
-          count += 1
+        if stop_word == word
+          puts stop_word
+          flag += 1
         end
       end
-      if count == 0
+      if flag == 0
         temp_array << word
       end
     end
+
     temp_array.each do |word|
       if hash_words[word] != nil
         hash_words[word] += 1

@@ -16,7 +16,6 @@ end
 
 def select_suffix
   suffix_array = ["em", "é", "ji", "oc", "ic", "uche", "ès"]
-
   suffix_array[rand(0..6).round]
 end
 
